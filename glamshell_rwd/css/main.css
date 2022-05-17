@@ -1,0 +1,135 @@
+
+/* 0509(월) */
+div#visual_wrap {
+    width: 100%; /* 사용자의 디바이스에 꽉 차라~ */
+    height: 469px;
+    overflow: hidden; /* 밖에 나간 영역 숨기기 */
+}
+
+section#visual {
+    width: 980px;
+    height: 100%; /* 부모 height : 469px의 100% */
+    margin:  0px auto; /* !가운데 정렬! */
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+ul#visual_list {
+    width: 300%;
+    height: 100%;
+    position: absolute; /* 부모에도 position이 필요, 아닐 경우 최상위를 부모로 인식 */
+    left: 50%; /* 중앙정렬? */
+    top: 0px;
+    margin-left: -150%; /* width가 300%이기에 */
+}
+
+ul#visual_list>li {
+    width: 33.33%; /* 3개니깐...! px은 소수점 불가 */
+    height: 100%;
+    float: left;
+}
+
+ul#visual_list>li img {
+    width: 100%;
+}
+
+a#next_btn {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    margin-top: -37px;
+}
+
+a#prev_btn {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    margin-top: -37px;
+}
+
+
+section#use_install {
+    width: 100%;
+    height: auto; /* auto만 존재, 유동적으로 활용하기 위해 */
+}
+
+ul#useinstall_list {
+    width: 100%;
+    height: auto;
+}
+ul#useinstall_list>li {
+    width: 22%;
+    height: auto;
+    float: left;
+    margin-right: 4%;
+}
+
+ul#useinstall_list>li:last-child {
+    margin-right: 0px;
+}
+
+p.useinstall_title {
+    text-align: center;
+    font: bold 14px 'Noto Sans KR';
+    color: rgb(63, 63, 63);
+    margin-bottom: 10px;
+}
+
+p.useinstall_img {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p.useinstall_img img{ /* 이미지 자체의 img */
+    width: 100%;
+}
+
+p.useinstall_text {
+    text-align: center;
+    font: normal 12px 'Noto Sans KR';
+}
+
+
+
+
+
+
+
+/* @media screen {} 은 항상 최하단 */
+@media screen and (max-width:980px) {
+    section#visual {
+        width: 100%;
+    }
+    section#contents {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    div#visual_wrap {
+        height: 300px;
+    }
+    section#contents {
+        padding-top: 30px;
+    }
+    ul#useinstall_list>li {
+        width: 46%;
+        margin-right: 8%;
+    }
+    ul#useinstall_list li:nth-child(2n) { /* nth-child: 불특정, 2n: 2의 배수 */
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    div#visual_wrap {
+        height:200px
+    }
+    a#next_btn img, a#prev_btn img {
+        width: 30px;
+    }
+    a#next_btn, a#prev_btn {
+        margin-top: -20px;
+    }
+}   

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입양식연습</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        table {
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+        fieldset {
+            border: none;
+        }
+        form#join {
+            width: 1200px;
+            height: auto;
+            margin: 100px auto;
+        }
+       table#join_table {
+           width: 100%;
+           height: 100%;
+           border-top: solid 3px black ;
+           border-bottom: 3px solid black;
+       }
+       table#join_table th {
+            width: 200px;
+            height: 80px;
+            background: #eeeeee;
+            border-bottom: 1px dotted black;
+            border-right: 1px dotted black;
+            text-align: left;
+            /* padding-left: 30px; padding만큼 늘어남 */
+            text-indent: 40px; /* 문단 들여쓰기 */
+       }
+       table#join_table td {
+            border-bottom: dotted 1px black;
+            text-indent: 40px;
+       }
+
+       /* 중복 클래스 : 동시에 여러개를 줄 수 있음 */
+       input.txt_box {
+           height: 25px;
+           background: #eeeeee;
+           border: solid 1px #cccccc;
+       }
+
+       /* 클래스명에 한번 더 추가 */
+       .w200 {
+           width: 200px;
+       }
+       .w300 {
+           width: 300px;
+       }
+
+    </style>
+</head>
+<body>
+    <form id="join" name="join">
+        <fieldset>
+            <legend class="hidden">가입양식연습</legend>
+            <table id="join_table">
+                <!-- legend가 존재하므로 caption 생략 가능 -->
+                <!-- <caption class="hidden">가입양식연습표</caption> -->
+                <tr>
+                    <!-- th를 누르면 label과 id를 통해서 커서가 이동됨, label 위치 확인 -->
+                    <th><label for="user_id">아이디</th><td><input type="text" id="user_id" class="txt_box w300" name="user_name" maxlength="12" placeholder="아이디 입력" autocomplete></td>
+                </tr>
+                <tr>
+                    <th><label for="user_pw">비밀번호</th><td><input type="password" id="user_pw" class="txt_box w300" name="user_pw" placeholder="비밀번호 입력"></td>
+                </tr>
+                <tr>
+                    <th><label for="phone_co">연락처</th>
+                    <td>
+                        <select name="phone_co" id="phone_co">
+                            <option>KT</option>
+                            <option>LG</option>
+                            <option>SK</option>
+                        </select>
+                        -
+                        <input type="text" class="txt_box w200" name="phone_no_1">
+                        -
+                        <input type="text" class="txt_box w200" name="phone_no_2">
+                        -
+                        <input type="text" class="txt_box w200" name="phone_no_3">
+                    </td>
+                </tr>
+                <tr>
+                    <th>구분</th>
+                    <td>
+                        <label>개인회원  <input type="radio" name="member" checked></label>
+                        <label>기업회원  <input type="radio" name="member"></label>
+                        <label>외국인  <input type="radio" name="member"></label>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+    </form>
+    
+</body>
+</html>>

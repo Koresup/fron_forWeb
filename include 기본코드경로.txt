@@ -1,0 +1,7 @@
+인크루드 기본코드 경로 
+
+상대경로  <?  include_once(./inc/header.html) ?>  ./현제문서위치기준 상대경로 
+
+절대경로 <? include_once $_SERVER["DOCUMENT_ROOT"]."/inc/header.html" ?>
+
+ 

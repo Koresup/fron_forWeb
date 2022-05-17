@@ -1,0 +1,80 @@
+
+  <!-- div(division) : 웹 페이지 영역을 분할시 이용하는 태그 / 의미없는 영역 / 가장 상단에 -->
+  <div id="header_wrap"> <!-- 모바일에선 div 가 딱히 필요없음 -->
+    <header> <!-- 실제 데이터가 들어가는 영역 / 로고, 네비게이션, 빠른메뉴 등 header에 존재 / 로고가 가장 먼저 -->
+      <!-- alt : 이미지의 설명 / alt 를 제목처럼 사용! / 이미지 태그는
+         이미지 alt를 읽어준다. => ~~~이미지(img태그) 로 읽음 -->
+      <!-- title : 이미지 외의 설명 / ~~~링크(a태그) 로 읽음 -->
+      <h1 id="logo">
+        <a href="/glamshell_rwd/index.php" title="글렘쉘 메인 페이지 바로가기">
+          <img src="/glamshell_rwd/images/logo.gif" alt="글램쉘 반응형 웹사이트">
+        </a>
+      </h1>
+
+      
+      <!-- 모바일 기준으로 navigation 영역 표기 -->
+      <nav id="topmenu">
+        <!-- nav태그 사용시 안에 h2(제목)을 넣어주기! -->
+        <h2 class="hidden">상단 빠른 메뉴</h2>
+        <ul id="topmenu_list">
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">JOIN</a></li>
+          <li><a href="#">SEARCH</a></li>
+          <li id="last-child"><a href="#">Q&A</a></li>
+        </ul>
+      </nav>
+
+      <nav id="mainmenu">
+        <h2 class="hidden">메인 메뉴</h2>
+        <ul id="mainmenu_list">
+          <li>
+            <!-- 큰 메인 메뉴 > 텍스트 > 끝나기 전에 서브 메뉴 넣기 -->
+            <a href="/glamshell_rwd/brand/brand.php">BRAND</a>
+            <ul class="submenu_list">
+              <li><a href="#">BRAND</a></li>
+              <li><a href="#">DESIGN</a></li>
+              <li><a href="#">BI</a></li>
+            </ul>
+          </li>
+          <li>            
+            <a href="#">COLLECTION</a>
+            <ul class="submenu_list">
+              <li><a href="#">BRAND</a></li>
+              <li><a href="#">DESIGN</a></li>
+              <li><a href="#">BI</a></li>
+            </ul>
+          </li>
+          <li>            
+            <a href="#">STORE</a>
+            <ul class="submenu_list">
+              <li><a href="#">BRAND</a></li>
+              <li><a href="#">DESIGN</a></li>
+              <li><a href="#">BI</a></li>
+            </ul>
+          </li>
+          <li>            
+            <a href="#">REVIEW</a>
+            <ul class="submenu_list">
+              <li><a href="#">BRAND</a></li>
+              <li><a href="#">DESIGN</a></li>
+              <li><a href="#">BI</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">CUSTOMER</a>
+            <ul class="submenu_list">
+              <li><a href="#">BRAND</a></li>
+              <li><a href="#">DESIGN</a></li>
+              <li><a href="#">BI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <nav id="mobile_menu">
+        <h2 class="hidden">모바일 메뉴</h2>
+        <img src="/glamshell_rwd/images/menu_mobile.png" alt="모바일 메뉴">
+      </nav>
+      <button id="best_btn">WeeklyBest</button> <!-- a링크 대신 button 가능 -->
+    </header>
+  </div>
+  <!-- 여기까지 상단 영역 -->

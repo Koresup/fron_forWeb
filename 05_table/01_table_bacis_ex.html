@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background{
+            background: #eeeeee;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td.gray {
+            background: #eeeeee;
+        }
+        caption {
+            text-align: left;
+        }
+        td.gray {
+            background: #eeeeee;
+        }
+        table#table_01 {
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+        }
+        table#table_01 td {
+            width: 200px;
+            height: 200px;
+            border: solid 1px;
+            text-align: center;
+        }
+
+        table#table_02 {
+            width: 400px;
+            height: 100px;
+            margin: 50px auto;
+        }
+        table#table_02 th {
+            width: 400px;
+            height: 100px;
+            border: solid 1px black;
+            background: #eeeeee;
+        }
+        table#table_02 td {
+            width: 200px;
+            height: 150px;
+            border: solid 1px black;
+            text-align: center;
+        }
+
+        table#table_03 {
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+        }
+        table#table_03 th {
+            width: 100px;
+            height: 400px;
+            border: solid 1px black;
+            background: #eeeeee;
+        }
+        table#table_03 td {
+            width: 150px;
+            height: 100px;
+            border: solid 1px black;
+            text-align: center;
+        }
+
+        table#table_04 {
+            width: 1000px;
+            height: auto;
+            border-bottom: solid 1px black;
+            margin: 50px auto;
+        }
+        table#table_04 th {
+            height: 50px;
+            margin: 50px auto;
+            border-top: solid 3px black;
+            border-bottom: solid 3px black;
+            background: #eeeeee;
+        }
+        table#table_04 td {
+            height: 30px;
+            border-bottom: dotted;
+            text-align: center;
+        }
+        th.no {
+            width: 100px;
+        }
+        th.title {
+            width: 400px;
+        }
+        th.name {
+            width: 200px;
+        }
+        th.date {
+            width: 200px;
+        }
+        th.count {
+            width: auto;
+        }
+        td.title {
+            text-align: left !important;
+        }
+        
+    </style>
+</head>
+<body>
+    <table id="table_01">
+        <caption>테이블1</caption>
+        <tr><td class="gray">kbs</td><td>mbc</td></tr>
+        <tr><td>ytn</td><td class="gray">sbs</td></tr>
+    </table>
+
+    <table id="table_02">
+        <caption>테이블2</caption>
+        <tr><th colspan="2">방송국</th></tr>
+        <tr><td>kbs</td><td>mbc</td></tr>
+        <tr><td>ytn</td><td>sbs</td></tr>
+    </table>
+
+    <table id="table_03">
+        <caption>테이블3</caption>
+        <tr><th rowspan="2">방송국</th><td>kbs</td><td>mbc</td></tr>
+        <tr><td>sbs</td><td>ytn</td></tr>
+    </table>
+
+    <table id="table_04">
+        <caption>테이블4</caption>
+        <tr><th class="no">번호</th><th class="title">제목</th><th class="name">작성자</th><th class="date">날짜</th><th class="count">조회수</th></tr>
+        <tr><td class="no">1</td><td class="title">제목입니까</td><td class="name">작성자1</td><td class="date">2022-01-13</td><td class="count">23</td></tr>
+        <tr><td class="no">2</td><td class="title">게시판입니까</td><td class="name">작성자2</td><td class="date">2022-01-13</td><td class="count">12</td></tr>
+        <tr><td class="no">3</td><td class="title">개쉴판입니꼬?</td><td class="name">작성자3</td><td class="date">2022-01-13</td><td class="count">43</td></tr>
+        <tr><td class="no">4</td><td class="title">답답</td><td class="name">작성자4</td><td class="date">2022-01-13</td><td class="count">45</td></tr>
+        <tr><td class="no">5</td><td class="title">제목이야</td><td class="name">작성자5</td><td class="date">2022-01-13</td><td class="count">787</td></tr>
+    </table>
+</body>
+</html>

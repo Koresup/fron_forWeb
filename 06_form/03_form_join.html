@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판연습</title>
+
+  <style>
+
+  body,p{
+    margin:0px; padding:0px; 
+  }
+  table{
+    border-spacing:0px; border-collapse:collapse; 
+  }
+
+
+  form#user_join{
+    width:800px; margin:200px auto; 
+  }
+
+  table.join{
+    width:800px; margin:0px auto; border-top:solid 3px gray; border-bottom:solid 3px gray;
+  }
+
+  table.join th{
+    width:150px;  height:70px; border-bottom:dotted 1px gray; border-right:dotted 1px gray; font:bold 14px/20px "돋움"; letter-spacing:2px; 
+    background:#F9F9F9; text-align:left; text-indent:30px; 
+  }
+
+  table.join td{
+    width:650px; height:70px; border-bottom:dotted 1px gray; text-indent:30px; font:normal 14px/20px "돋움"; 
+  }
+
+  .txt_box{
+    border:solid 1px #CCCCCC; background:#FCFCFC; height:25px; text-indent:10px; 
+  }
+  .size120{
+    width:120px; 
+  }
+  .size200{
+    width:200px; 
+  }
+  .size300{
+    width:300px; 
+  }
+
+  .select_box{
+    width:100px; height:30px; 
+  }
+
+  
+
+
+
+  </style>
+
+
+
+</head>
+
+<body>
+	
+   
+    
+   
+     <form id="user_join" method="post" action="">	
+	
+            <table class="join" summary="회원가입양식">            
+              <tr>
+                <th>아이디</th> 
+                <td>
+                  <input type="text" id="user_id" class="txt_box size300" /> <!-- 중복클래스 적용 -->
+                </td>
+              </tr>
+              <tr>
+                <th>비밀번호</th>
+              
+                <td>
+                  <input type="text" id="user_pw" class="txt_box size300" />              
+                </td>
+              </tr>
+              <tr>
+                <th>연락처 </th>
+                <td>
+                  <select id="user_phone_select" class="select_box">
+                    <option>이동통신</option> 
+                    <option>SKT</option>
+                    <option>KT</option>
+                    <option>LGU+</option>
+                  </select>
+                -
+                <input type="text" id="phone_number_1"  class="txt_box size120"  maxlength="3" />
+                - 
+                <input type="text" id="phone_number_2"  class="txt_box size120"  maxlength="4" />
+                - 
+                <input type="text" id="phone_number_3"  class="txt_box size120"  maxlength="4" />
+                </td>
+              </tr> 
+              <tr>
+                <th >구 &nbsp;분</th> 
+                <td>
+                  
+                    개인회원<input type="radio" name="sort"  />
+                  
+                  
+                    기업회원<input type="radio" name="sort" />
+                  
+                  
+                   외국인<input type="radio" name="sort" />
+                 
+                 
+                 
+                
+               </td>
+              </tr>
+         </table>
+         
+     </form>    
+    
+    
+    
+    
+   
+   
+    
+
+
+
+
+
+</body>
+</html>

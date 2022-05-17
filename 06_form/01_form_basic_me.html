@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러가지 폼 요소 연습</title>
+    <style>
+        fieldset {
+            border: none;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="test" name="test">
+        <!-- 폼 요소도 접근성 중요 -->
+        <fieldset> <!-- fieldset : 'form 요소들'을 보기 쉽게 그룹으로 묶을 수 있음 -->
+            <!-- legend :  <fieldset> 으로 나누어진 구역에 제목을 붙일 때 사용, 생략 ok -->
+            <legend>여러가지 폼 요소 연습</legend>
+            <!-- 폼 요소의 종류 -->
+            <!-- input은 p, table 태그 안에 들어감 -->
+            <p> <!-- 단락 : 사용시 내용 앞뒤로 빈줄이 생기며 단락 생성 -->
+                <input type="text" id="user_id" name="user_id" value="" size="30" maxlength="10"
+                    placeholder="아이디 입력" autofocus autocomplete="off" required>
+                <!-- input : 사용자가 직접 입력 가능 -->
+                <!-- autofocus="autofocus" : 이것이 원래 -->
+                <!-- size : 영문 기준 30자 / maxlength : 실제 기입 가능 글자수 10 / placeholder : 힌트 표시, 읽기 가능 / 
+                autofocus : 시작과 동시에 커서 위치 / autocomplete : 자동완성 value : 초기값 / required : 필수 입력 필드 지정-->
+            </p>
+            <p>
+                <input type="password" id="user_pw" name="user_pw" value="" size="20" maxlength="12" placeholder="비밀번호 입력" autocomplete="off">
+            </p>
+            <p>
+                <!-- name : 정보의 데이터 값을 처리하는 속성, name을 공통 속성으로 해야 중복 x -->                
+                남자<input type="radio" name="gender" checked> 여자<input type="radio" name="gender">
+            </p>
+            <p>
+                <!-- checkbox : name 속성 필요 -->                
+                캠핑<input type="checkbox" name="hobby"> 낚시<input type="checkbox" name="hobby">
+            </p>
+            <p>
+                <!-- submit : 폼 안의 입력된 데이터 값을 보내기 -->
+                <input type="submit" value="보내기">
+                <!-- reste : 입력된 데이터를 취소할 때 -->
+                <input type="reset" value="취소">
+                <button>일반 버튼</button>              
+                <input type="image" src="./images/ok_button.gif" alt="확인">
+            </p>
+            <p>
+                <!-- 파일 찾기... essy... -->
+                <!-- 확장자 제한은 script에서 설정 가능 -->
+                <input type="file">
+            </p>
+            <p>
+                <!-- 메모? 글쓰기? / style에서 resize : none;-->
+                <textarea cols="50" rows="10"></textarea>
+            </p>
+            <p>
+                <!-- select, option : combox 느낌 -->
+                <!-- select size="3" : 3개의 list -->
+                <select size="3">
+                    <option>네이버</option>
+                    <option>구글</option>
+                    <option>네이트</option>
+                </select>
+            </p>
+
+
+
+
+        </fieldset>
+    </form>
+</body>
+
+</html>

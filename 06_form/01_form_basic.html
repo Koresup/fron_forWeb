@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>여러가지폼요소연습</title>
+    <style>
+
+    form#form_basic{
+        margin:100px; 
+    }
+
+    fieldset{
+        border:none; /* 모든 fieldset 요소에 border:none ; */
+    }
+    textarea{
+        resize:none;  /* textarea 요소에 사용자가 크기조절 못하게 적용 */
+    }
+    input.txt_box{
+        width:200px; height:25px; border:solid 1px #CCCCCC; background:#F3F3F3; font:normal 14px "돋움"; text-indent:10px; 
+    }
+
+    textarea#user_write{
+    border:solid 1px #CCCCCC; background:#F3F3F3; text-indent:10px; 
+    }
+
+
+
+    </style>
+</head>
+
+<body>
+
+	<form id="form_basic" method="post" action="test_URI">
+    	
+        <fieldset> <!-- 폼요소를 구분할 필요가 있을때 예) 필수입력사항 /선택입력사항 등  (생략가능)--> 
+        	
+            <legend>여러가지폼요소정리</legend><!--생략가능-->
+        	
+            <p>
+            	아이디 <input type="text" id="user_id" class="txt_box" size="30" maxlength="8" placeholder="아이디입력" autocomplete="off" autofocus="autofocus";   /> <!--disabled="disabled" readonly="readonly"-->
+                         
+            </p>
+            
+            <p>
+            	패스워드 <input type="password" id="user_pw" class="txt_box" placeholder="패스워드입력"  />
+                
+            </p>
+            
+            <p>
+            	남자<input type="radio" name="gender" checked="checked" />
+                            여자<input type="radio" name="gender" />
+                <!--주의 name 요소가 같아야 함  -->
+            </p>
+            
+            <p>
+                           독서<input type="checkbox" name="hobit" />
+                           낚시<input type="checkbox" name="hobit" />
+            </p>
+            
+            <p>
+            	  <input type="submit" value="보내기"  />
+                <input type="reset" value="취소" />
+                <input type="button" value="일반버튼" />
+                <button type="submit">일반버튼</button>
+            </p>
+             <p>
+                <input type="image" src="images/ok_button.gif" alt="확인버튼" />
+            </p>
+            
+            <p>
+            	<input type="file" id="user_file" />
+            </p>
+            
+            <p>
+    
+            	<textarea id="user_write" cols="50" rows="10"></textarea>
+            
+            </p>
+            
+            <p>
+            	<select id="user_site" size="3">
+                	<option> 네이버</option>
+                    <option> 네이트</option>
+                    <option> 다음</option>                
+                </select>
+              
+                
+                            
+            </p>   
+            
+        
+        </fieldset>   
+    </form>
+</body>
+</html>

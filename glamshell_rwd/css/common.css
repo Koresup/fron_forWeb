@@ -1,0 +1,283 @@
+/* css의 문법 : 선택자(누구한테 적용할 것인지) { 속성 : 값 }  */
+/* body {
+  background: red;
+} */
+
+/* 클래스 지정시 . 사용 */
+/* > 는 방향성  */
+
+/* 기본 css 스타일 속성 시작 */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  background: #ececec;
+}
+
+ul.skipmenu_list>li>a {
+  /* 바로가기 메뉴 숨기기 */
+  /* 탭키로 접근할 수 있도록 디스플레이에 존재해야하므로 0px 대신 width와 height는-> 1px 로 설정 */
+  width: 1px; 
+  height: 1px; 
+  font-size: 0px; 
+  line-height: 0px;
+  position: absolute;
+}
+
+ul.skipmenu_list>li>a:focus { 
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+
+  /* 행간은 폰트 사이즈의 * 1.5가 이상적 */
+  /* height와 같이 주면 중앙으로 위치 */
+  line-height: 30px;
+
+  /* color는 폰트 컬러 */
+  /* 색맹을 위해서 black & white 으로 설정 */
+  background: black;
+  color: white;
+  text-align: center;
+
+  /* 텍스트의 밑줄(하이퍼링크)을 제거 */
+  text-decoration: none;
+}
+
+.hidden {
+  width: 1px; 
+  height: 1px; 
+  font-size: 0px; 
+  line-height: 0px;
+  position: absolute;
+}
+/* 기본 css 스타일 속성 끝. */
+
+
+
+
+
+
+/* . : class */
+/* # : id */
+div#header_wrap {
+  width: 100%;
+  height: 114px; /* 열렸을 때 높이 300px */
+  background: -webkit-linear-gradient(top, rgba(44,44,44,1) 0%,rgba(44,44,44,1) 30px,
+                                          rgba(237,238,240,1) 30px,rgba(237, 238, 240, 1) 114px, 
+                                            rgba(0, 0, 0, 0.8) 114px);
+}
+
+header {
+  width: 980px;
+  height: 100%; /* header_wrap의 height를 따서 100% 가능 */
+  /* float: left;  */ /* float vs. margin가운데 정렬 = float 우세 */
+  margin: 0px auto; /* 위아래, 좌우 */
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+
+
+/* date : 05042022 */
+h1#logo {
+  width: 127px;
+  height: 52px;
+  position: absolute;
+  left: 0px;
+  top: 45px;
+}
+
+nav#topmenu {
+  width: 142px;
+  height: 16px;
+  /* background: blue; */
+  position: absolute;
+  right: 0px;
+  top: 6px;
+}
+
+ul#topmenu_list {
+  width: 100%;
+  height: 100%;
+}
+
+ul#topmenu_list li {
+  float: left;
+  margin-right: 10px;
+}
+
+ul#topmenu_list li a {
+  color: #acacac; 
+  font:normal 10px/16px 'Noto Sans KR'
+  /* ; 폰트 크기/행간/종류 */
+}
+
+/* 불필요한 마진 없애기 위해 last-child 값에 마진 0px */
+ul#topmenu_list li:last-child {
+  margin-right: 0px;
+}
+
+nav#mainmenu {
+  width: 58%;
+  height: 20px;
+  position: absolute;
+  left: 20%;
+  top: 60px;
+}
+
+ul#mainmenu_list {
+  width: 100%;
+  height: 100%;
+}
+
+ul#mainmenu_list>li {
+  /* '>'는 직계만 손자는 안됨 */
+  width: 20%;
+  height: 100%;
+  float: left;
+  /* 문단 정렬 center */
+  text-align: center;
+}
+
+ul#mainmenu_list>li>a {
+  font:normal 16px 'Noto Sans KR'; 
+  color: #555555;
+}
+
+ul.submenu_list {
+  position: relative;
+  left: 0px;
+  top: 40px;
+  display: none;
+}
+
+ul.submenu_list>li {
+  margin-bottom: 8px;
+}
+
+ul.submenu_list>li>a {
+  font: normal 12px 'Noto Sans KR';
+  color:#a5a5a5;
+}
+
+button#best_btn {
+  width: 130px;
+  height: 24px;
+  background: -webkit-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%);
+  border: solid 1px #772121; 
+  /* dotted || solid */
+  position: absolute;
+  right: 0px;
+  top: 65px;
+  border-radius: 5px;
+  transform: skew(-20deg);
+  color: rgb(218, 218, 218);
+  font: normal 12px/-24px 'Noto Sans KR';
+  /* skew로 인해 쳐진 행간을 음수로 올려주기 */
+}
+
+nav#mobile_menu {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0px;
+  top: 60px;
+  display: none;
+}
+
+div#contents_wrap {
+  width: 100%;
+  min-height: 400px;
+  background-color: #ececec;
+}
+
+section#contents {
+  width: 980px;
+  height: 100%;
+  margin: 0px auto;
+  padding-top: 70px;
+}
+
+/* @media screen {} 은 항상 최하단 */
+@media screen and (max-width:980px) {
+  section#contents {
+      width: 95%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  section#contents {
+      padding-top: 30px;
+  }
+  ul#useinstall_list>li {
+      width: 46%;
+      margin-right: 8%;
+  }
+  ul#useinstall_list li:nth-child(2n) { /* nth-child: 불특정, 2n: 2의 배수 */
+      margin-right: 0px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  a#next_btn img, a#prev_btn img {
+      width: 30px;
+  }
+}   
+
+div#footer_wrap {
+  width: 100%;
+  height: 100px;
+  background: rgba(44, 44, 44, 1)
+}
+
+footer {
+  width: 980px;
+  height: 100%;
+  margin: 0px auto;
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+
+p#copyright {
+  width: 40%;
+  height: 16px;
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  font: normal 12px 'Noto Sans KR';
+  color: rgb(194, 194, 194);
+}
+
+
+
+
+
+
+
+
+/* 무조건 외우기 */
+@media screen and (max-width:980px) {
+  header, footer {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width:768px){
+  nav#topmenu, nav#mainmenu, button#best_btn {
+    display: none;
+  }
+  nav#mobile_menu {
+    /* 보여줘라~ */
+    display: block;
+  }
+  h1#logo {
+    /* 가운데?로 로고이동 */
+    /* 로고 크기의 절반 값, 마진레프트 -,+ 의 이동 확인하기 */
+    left: 50%; 
+    /* 127px의 절반값 그리고 소수점은 마진에서 안됨 */
+    margin-left: -63px;
+  } 
+}
