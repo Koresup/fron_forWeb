@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+
+  <style>    
+    
+    
+    ul,li{
+      margin:0px; padding:0px; list-style:none;
+    }
+
+    ul#img_list{
+      width:700px;
+    }
+    ul#img_list li{
+      float:left; margin:10px;       
+    }
+    
+    div#grayLayer{          
+      height:100%; width:100%; position:absolute; left:0; top:0;      
+      background:black; opacity:0;
+    }   
+
+    div#overLayer{      
+      width:650px; height:443px; position:absolute; top:50%; left:50%;  margin-top:-221px; margin-left:-325px; 
+      display:none; 
+    }
+    
+  
+  </style>
+
+  <title> modalWindow - 일반함수 </title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js "></script>
+  <!--GSAP CDN 코드 -->
+  
+  <script>
+
+    document.addEventListener('DOMContentLoaded',()=>{
+
+      const grayLayer=document.createElement('div'); // 어둡게 가려줄 div요소 생성
+      grayLayer.id='grayLayer'; // 아이디 속성값을 'grayLayer' 로 지정해서 기존 CSS스타일 속성지정 
+      const overLayer=document.createElement('div'); // 선택한 이미지가 보여줄 div 요소생성 
+      overLayer.id='overLayer'; // 아이디 속성값을 'overLayer'로 지정해서 기존 CSS스타일 속성지정 
+
+      const imgMenu=document.querySelectorAll('#img_list>li'); // 모든 이미지 메뉴를 찾음       
+
+      for(const item of imgMenu){ // 모든 이미지 메뉴에 이벤트 적용 
+        item.addEventListener('click', showImg) // 이미지 메뉴 클릭하면 해당 이미지를 보여지게 하는 함수실행 
+      }
+
+      grayLayer.addEventListener('click',hideImg) // grayLayer 클릭하면 이미지 사라지게 하는 함수실행 
+
+
+      function showImg(){ // 해당 이미지를 보여주게 하는 함수 
+
+        document.querySelector('body').append(grayLayer); // body 요소에 grayLayer 추가 
+        document.querySelector('body').append(overLayer); // body 요소에 overLayer 추가  
+        // 주의) document.getElementsByTagName('body')를 이용해서 요소를 찾으면 바로 붙여서 append 메서드 실행안됨 
+        
+        gsap.set(grayLayer, {display:'block'}) // grayLayer를 보여지게 함
+        gsap.to(grayLayer,{opacity:0.9, duration:.3, ease:'porwer1.out'}) // 어둡게 되는 에니메이션 실행    
+
+        gsap.set(overLayer, {display:'block'}) // overLayer를 보여지게 함 
+
+        let checkMenu=this; // 클릭한 이미지메뉴를 순번을 체크할 checkMenu에 대입 
+        let selectedIndex=0; // 클릭한 이미지 순번을 대입할 변수 
+
+        while((checkMenu=checkMenu.previousElementSibling)!=null){ // 클릭한 이미지 메뉴의 순번구함 
+          selectedIndex++;
+        }
+
+        overLayer.innerHTML='<img src=images/photo'+(selectedIndex+1)+'.jpg>' 
+        // 클릭한 이미지 메뉴 순번과 같은 이미지 번호의 큰이미지 생성하여 overLayer에 바로 넣어줌 
+        // 중요) innerHTML 속성값으로 바로 넣어준다. (안에 있는 요소는 모두 지우고 새로운 요소를 넣어줌)
+          
+      }
+
+      function hideImg(){ // 이미지 사라지게 하는 함수 
+
+        gsap.set(overLayer, {display:'none'}) // 보여준 이미지가 들어있는 overLayer를 안보이게함 
+        // grayLayer를 다시 투명하게 에니메이션 
+        gsap.to(grayLayer,{opacity:0, duration:.3, ease:'power1.out', onComplete:()=>{
+          grayLayer.style.display='none'  // 중요) 에니메이션이 끝나면 grayLayer를 안보이게함 ( 그렇지 않으면 다시 이미지메뉴가 클릭안됨 )     
+        }})
+       
+      }
+
+    })  
+  
+  </script>
+
+
+</head>
+<body>
+
+  <ul id="img_list">
+    <li><a href="#"><img src="images/photo1_thum.jpg" alt=""  /></a></li>
+    <li><a href="#"><img src="images/photo2_thum.jpg" alt="" /></a></li>
+    <li><a href="#"><img src="images/photo3_thum.jpg" alt="" /></a></li>
+    <li><a href="#"><img src="images/photo4_thum.jpg" alt="" /></a></li>
+    <li><a href="#"><img src="images/photo5_thum.jpg" alt="" /></a></li>
+    <li><a href="#"><img src="images/photo6_thum.jpg" alt="" /></a></li>
+    <li><a href="#"><img src="images/photo7_thum.jpg" alt="" /></a></li>
+    <li><a href="#"><img src="images/photo8_thum.jpg" alt="" /></a></li>
+  </ul>
+  
+  
+</body>
+</html>

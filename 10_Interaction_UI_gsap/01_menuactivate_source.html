@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <style>
+    ul,
+    li {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+    }
+
+    ul#menu_list {
+      width: 200px;
+      position: absolute;
+      left: 500px;
+      top: 200px;
+    }
+
+    ul#menu_list li {
+      width: 200px;
+      height: 40px;
+      margin-bottom: 20px;
+      line-height: 40px;
+      background: #eeeeee;
+      text-align: center;
+      -webkit-transition: 0.2s ease; /* 0.2초동안 스~윽 */
+      cursor: pointer;
+    }
+
+    ul#menu_list li.selected {
+      background: orange;
+      color: white;
+    }
+  </style>
+
+
+  <title> menuActivate </title>
+
+  <script>
+
+
+    // 상단 CSS 스타일의 메뉴요소에 'selected' 클래스로 적용한 메뉴 활성화 스타일 속성 과 transition 속성확인 
+
+    // function 함수명(매개변수) {
+    //   실행명령
+    // }
+
+    // 화살표 함수(람다?)
+    // ()=> {
+
+    // }
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // var(variable) const(final, 요소를 찾을 때 사용) let(요소를 바꿀 때)
+
+      // ex) 아이디로 찾을 때 querySelector
+      // ex) css형식으로 찾을 때 querySelectorAll
+      const mainMenu = document.querySelectorAll('#menu_list>li')
+      let selectedMenu = null;
+
+      // mainMenu에서 item이라는 요소를 넣자
+      for (const item of mainMenu) {
+        item.addEventListener('click', clickMainMenu)
+      }
+
+      // 1)
+      // function menuActivate() {
+      //   for(const item of mainMenu) {
+      //     item.classList.remove('selected')
+      //   }
+
+      //   // 클린한 녀석 => this
+      //   this.classList.add('selected')
+      // }
+
+      // 2)
+      // function menuActivate() {
+      //   if (selectedMenu != null && selectedMenu != this) {
+      //     selectedMenu.classList.remove('selected')
+      //   }
+
+      //   if (selectedMenu != this) {
+      //     selectedMenu = this;
+      //     selectedMenu.classList.add('selected')
+      //   }
+      // }
+
+      function clickMainMenu() {
+        let clickIndex = getIndex(this)
+        menuActivate(clickIndex)
+      }
+
+      // 3) 순번 알아내기
+      // 이전 요소의 갯수로 순번을 알아낼 수 있음 =>
+      // 순번 구하는 함수 만들기
+      function getIndex(menu) {
+        let checkMenu = menu;
+        let selectedIndex = 0;
+
+        // previousElementSibling : 이전 요소를 찾는 메서드(**부모는 해당 안됨**)
+        while ((checkMenu = checkMenu.previousElementSibling) != null) {
+          selectedIndex++
+        } 
+        return selectedIndex
+      }
+
+      function menuActivate(index) {
+        if(selectedMenu != null && selectedMenu != mainMenu[index]) {
+          selectedMenu.classList.remove('selected')
+        }
+        if(selectedMenu != mainMenu[index]) {
+          selectedMenu = mainMenu[index]
+          selectedMenu.classList.add('selected')
+        } 
+
+      }
+    })
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+</head>
+
+<body>
+
+  <ul id="menu_list">
+    <li>첫번째메뉴</li>
+    <li>두번째메뉴</li>
+    <li>세번째메뉴</li>
+    <li>네번째메뉴</li>
+  </ul>
+
+</body>
+
+</html>
